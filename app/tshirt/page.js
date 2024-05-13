@@ -68,4 +68,4 @@ async function getdata() {
   );
 }
 
-
+export default Tshirt;
