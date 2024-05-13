@@ -27,7 +27,7 @@ async function getdata() {
   return tshirt;
 }
 
-export async function Tshirt() {
+ async function Tshirt() {
   
   let products = await getdata();
  
