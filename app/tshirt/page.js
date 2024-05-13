@@ -68,4 +68,4 @@ export async function Tshirt() {
   );
 }
 
-export default Tshirt;
+
