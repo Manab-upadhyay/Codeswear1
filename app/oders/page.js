@@ -77,7 +77,7 @@ setoder(true)
               </thead>
             
                 {data?.map((orderItem, index) => (
-                      <tbody>
+                      <tbody key={index}>
                 
                     {Object.keys(orderItem.products).map((productKey, prodIndex) => (
                       <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
