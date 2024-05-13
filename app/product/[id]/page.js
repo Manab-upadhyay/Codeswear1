@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import { CartContext } from "../../cartcontext";
 import { usePathname } from "next/navigation";
 
-export   function Productitem({params}){
+export default  function Productitem({params}){
   const slug=params.id
   console.log("slug>>>", slug)
   const { cart, addCart, clearCart,buynow } = useContext(CartContext);
@@ -271,4 +271,3 @@ console.log("colorset")
     </>
   )
 }
-export default Productitem;
