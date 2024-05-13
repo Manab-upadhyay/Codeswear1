@@ -1,7 +1,6 @@
 
 import connectDB from "../db/page";
-import { HttpStatusCode } from 'axios';
-import { UpdateProductDto } from "./update";
+
 import Product from './product';
 import { NextRequest, NextResponse } from 'next/server';
 import { CreateProductDto } from "./createdto";
