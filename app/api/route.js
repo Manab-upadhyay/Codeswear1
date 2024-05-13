@@ -6,20 +6,19 @@
 //   }
 
 
-import { request } from 'http';
+
 import connectDB from '../db/page';
 import Product from '../models/product';
 import { NextResponse } from "next/server";
-import { NextRequest } from 'next/server';
-import { Query } from 'mongoose';
+
 
 export  async function GET() {
-  await connectDB(); // Connect to the database
+  // Connect to the database
   
   
- 
-  console.log("Inside the get call")
+
   try {
+    await connectDB();
     const products = await Product.find();
     let tshirt = {};
   for (let item of products) {
