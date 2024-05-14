@@ -4,7 +4,7 @@ import Link from "next/link";
 import logo from "../logo1.png";
 import { FaCartPlus } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { RiAccountCircleFill } from "react-icons/ri";
@@ -16,26 +16,22 @@ import { usePathname } from 'next/navigation'
 export default function Navbar() {
     const { logout, user, cart, addCart, removefromCart, clearCart, total } = useContext(CartContext);
     const [toggle,settoggle]= useState(false);
-
+const[ClickCart, setClickCart]= useState(false)
     
  
    // Correctly using the useRef hook
-   function  togglecart() {
-   
-       
-        if (ref.current.classList.contains('translate-x-full')) {
-            ref.current.classList.remove('translate-x-full'); // Correctly accessing classList
-            ref.current.classList.add('translate-x-0'); // Correctly accessing classList
-        } else if (!ref.current.classList.contains('translate-x-full')) {
-            ref.current.classList.remove('translate-x-0'); // Correctly accessing classList
-            ref.current.classList.add('translate-x-full'); // Correctly accessing classList
-        }
-    }
-    const ref = useRef();
+  
+  
     const path= usePathname()
     const isCheckoutPage =path=== '/checkout';
+    function handdlecartclick(){
+        setClickCart(true)
+    }
+    function handdlecartclose(){
+        setClickCart(false)
+    }
     return (
-        <div className="flex flex-col md:flex-row justify-start  w-full items-center md:my-2 my-0  shadow-lg sticky top-0  z-10 bg-white md:h-12 h-20">
+        <div className="flex flex-col md:flex-row justify-start w-80 md:w-full items-center md:my-2 my-0  shadow-lg sticky top-0  z-10 bg-white md:h-12 h-20">
             
             <Link href={"/"}>
                 <Image src={logo} width={100} height={100} className=" -my-5" />
@@ -74,9 +70,9 @@ export default function Navbar() {
                 </div>}
            {user.value&& <RiAccountCircleFill onMouseEnter={()=>settoggle(true)} onMouseLeave={()=>settoggle(false)}/>}
 
-               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 -my-3 rounded-lg">Login </button></Link> }
+               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 rounded-lg">Login </button></Link> }
                  
-            <div onClick={togglecart} className="cart mx-4 cursor-pointer">
+            <div onClick={handdlecartclick} className="cart mx-4 cursor-pointer">
            
            <FaCartPlus  width={20} />
        </div>
@@ -84,9 +80,9 @@ export default function Navbar() {
             </div>
           
         
-            {!isCheckoutPage&&<div ref={ref} className=" absolute top-0 right-0  bg-yellow-200 h-[100vh] py-10 transform transition-transform translate-x-full px-8 overflow-hidden">
+            {!isCheckoutPage&&ClickCart&&<div className=" absolute md:top-0 md:right-0 top-5 right-5 bg-yellow-200 h-[100vh] py-10 px-8 overflow-hidden">
                 <h2 className="font-bold text-xl">Shopping Cart</h2>
-                <span onClick={togglecart} className="absolute md:top-2 top-10 right-2 cursor-pointer">
+                <span onClick={handdlecartclose} className="absolute md:top-2 top-10 right-2 cursor-pointer">
                     <IoIosCloseCircleOutline />
                     
                 </span>
