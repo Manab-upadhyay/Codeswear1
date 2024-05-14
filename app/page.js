@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
     <div >
-    <div className="relative w-screen h-screen ">
+    <div className="relative w-full h-full ">
   <Image src={img} className="object-cover w-full h-full   rounded-lg" />
   <div className="absolute inset-x-0 bottom-10 flex items-center justify-center text-white text-2xl font-bold bg-black bg-opacity-50 p-4 w-full">
     Explore Our Code-Themed Collection
