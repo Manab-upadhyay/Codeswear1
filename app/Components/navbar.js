@@ -16,22 +16,22 @@ import { usePathname } from 'next/navigation'
 export default function Navbar() {
     const { logout, user, cart, addCart, removefromCart, clearCart, total } = useContext(CartContext);
     const [toggle,settoggle]= useState(false);
-const[ClickCart, setClickCart]= useState(false)
+    const[ClickCart, setClickCart]= useState(false)
     
  
    // Correctly using the useRef hook
-  
-  
-    const path= usePathname()
-    const isCheckoutPage =path=== '/checkout';
+   
     function handdlecartclick(){
         setClickCart(true)
     }
     function handdlecartclose(){
         setClickCart(false)
     }
+   
+    const path= usePathname()
+    const isCheckoutPage =path=== '/checkout';
     return (
-        <div className="flex flex-col md:flex-row justify-start w-80 md:w-full items-center md:my-2 my-0  shadow-lg sticky top-0  z-10 bg-white md:h-12 h-20">
+        <div className="flex flex-col md:flex-row justify-start  w-full items-center md:my-2 my-0  shadow-lg sticky top-0  z-10 bg-white md:h-12 h-20">
             
             <Link href={"/"}>
                 <Image src={logo} width={100} height={100} className=" -my-5" />
@@ -70,9 +70,9 @@ const[ClickCart, setClickCart]= useState(false)
                 </div>}
            {user.value&& <RiAccountCircleFill onMouseEnter={()=>settoggle(true)} onMouseLeave={()=>settoggle(false)}/>}
 
-               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 rounded-lg">Login </button></Link> }
+               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 -my-3 rounded-lg">Login </button></Link> }
                  
-            <div onClick={handdlecartclick} className="cart mx-4 cursor-pointer">
+            <div onClick={togglecart} className="cart mx-4 cursor-pointer">
            
            <FaCartPlus  width={20} />
        </div>
@@ -80,7 +80,7 @@ const[ClickCart, setClickCart]= useState(false)
             </div>
           
         
-            {!isCheckoutPage&&ClickCart&&<div className=" absolute md:top-0 md:right-0 top-5 right-5 bg-yellow-200 h-[100vh] py-10 px-8 overflow-hidden">
+            {!isCheckoutPage&&ClickCart&&<div  className=" absolute top-0 right-0  bg-yellow-200 h-[100vh] py-10  px-8 overflow-hidden">
                 <h2 className="font-bold text-xl">Shopping Cart</h2>
                 <span onClick={handdlecartclose} className="absolute md:top-2 top-10 right-2 cursor-pointer">
                     <IoIosCloseCircleOutline />
