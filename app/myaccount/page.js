@@ -40,7 +40,7 @@ export default function Myaccount(){
    async function handleclick(){
         const result= { address, Name, pin, contact,email};
    
-        const data = await fetch('http://localhost:3000/updateuser',{
+        const data = await fetch('/updateuser',{
             method: 'POST',
             body: JSON.stringify(result),
             headers: {

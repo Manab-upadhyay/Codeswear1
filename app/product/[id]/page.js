@@ -33,7 +33,7 @@ export default  function Productitem({params}){
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api');
+        const response = await fetch('/api');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -54,7 +54,7 @@ export default  function Productitem({params}){
 
     console.log("hh>>")
     try{
-      let pins =   fetch('http://localhost:3000/product/pins').then((res)=>res.json()).then((response)=>{
+      let pins =   fetch('/product/pins').then((res)=>res.json()).then((response)=>{
         console.log("pin present :",response.includes(parseInt(pin)))
         
         if(response.includes(parseInt(pin))){

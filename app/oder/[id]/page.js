@@ -11,7 +11,7 @@ useEffect(() => {
 
       try {
        
-        const response = await fetch('http://localhost:3000/oderapi');
+        const response = await fetch('/oderapi');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }

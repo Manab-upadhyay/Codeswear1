@@ -22,7 +22,7 @@ setoder(true)
 
             try {
              
-              const response = await fetch('http://localhost:3000/oderapi');
+              const response = await fetch('/oderapi');
               if (!response.ok) {
                 throw new Error('Failed to fetch data');
               }
@@ -47,7 +47,7 @@ setoder(true)
       function handleclick(orderId) {
         console.log('Clicked order ID:', orderId);
        
-        router.push(`http://localhost:3000/oder/${orderId}`)
+        router.push(`/oder/${orderId}`)
 
         // You can add further functionality here based on the clicked order ID
       }

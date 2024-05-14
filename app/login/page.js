@@ -28,7 +28,7 @@ export default function Login() {
     e.preventDefault();
     const data = { Name, Email, Password };
     try {
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
