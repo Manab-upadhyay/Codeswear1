@@ -72,7 +72,7 @@ export default function Navbar() {
 
                {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 -my-3 rounded-lg">Login </button></Link> }
                  
-            <div onClick={togglecart} className="cart mx-4 cursor-pointer">
+            <div onClick={handdlecartclick} className="cart mx-4 cursor-pointer">
            
            <FaCartPlus  width={20} />
        </div>
