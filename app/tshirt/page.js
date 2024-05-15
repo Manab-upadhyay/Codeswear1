@@ -5,7 +5,7 @@ import connectDB from "../db/page";
 
 async function getdata() {
   connectDB(); 
-  let products = await Product.find({category:'T shirt'});
+  let products = await Product.find({category:' T shirt'});
   
   let tshirt = {};
   for (let item of products) {
