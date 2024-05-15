@@ -72,7 +72,7 @@ setname(e.target.value)
    const orderId= Math.floor(Math.random()*100000)
 const result= {cart, total , address, name, pin, contact,email, orderId};
    
-    const data = await fetch('http://localhost:3000/payment',{
+    const data = await fetch('/payment',{
         method: 'POST',
         body: JSON.stringify(result),
         headers: {
@@ -87,7 +87,7 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
 
             try {
              
-              const response = await fetch('http://localhost:3000/oderapi');
+              const response = await fetch('/oderapi');
               if (!response.ok) {
                 throw new Error('Failed to fetch data');
               }
@@ -124,7 +124,7 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
             alert("Your payment is " + (response.razorpay_payment_id ? 'successful' : 'failed'));
         
             try {
-              const updateResponse = await fetch('http://localhost:3000/updatestatus', {
+              const updateResponse = await fetch('/updatestatus', {
                 method: 'POST',
                 body: JSON.stringify({ orderId: orderId, status: 'paid' }),
                 headers: {
@@ -137,7 +137,7 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
               }
         
               // Redirect to the order details page
-              router.push(`http://localhost:3000/oder/${orderId}`);
+              router.push(`/oder/${orderId}`);
             } catch (error) {
               console.error('Error updating order status:', error);
               alert('Failed to update order status. Please contact support.');
@@ -179,18 +179,18 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
             <input onChange={handleChange} value={email} type="email" id="email" name="email" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         </div>
-        <div className="p-2 md:w-full w-56">
+        <div className="p-2 w-full ">
           <div className="relative">
             <label   for="message" className="leading-7 text-sm text-gray-600">Address</label>
             <textarea id="address" onChange={handleChange} value={address} name="address" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
           </div>
         </div>
         <div className="flex md:flex-row flex-col">
-        <div className="relative md:w-full w-60">
+        <div className="relative w-full">
             <label   for="name" className="leading-7 text-sm text-gray-600">Contact Number</label>
             <input onChange={handleChange} value={contact} type="text" id="contact" name="contact" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
-             <div className="relative  md:w-full w-60">
+             <div className="relative  w-full ">
             <label for="name" className="leading-7 text-sm text-gray-600">Pincode</label>
             <input  onChange={handleChange} value={pin} type="text" id="pincode" name="pincode" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
@@ -205,7 +205,7 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
   <div className='text-center text-black font-bold'>2. Review your Cart</div>
     </div>
   
-    <div  className="sidecart  bg-yellow-200  py-10 md:w-full w-80 ">
+    <div  className="sidecart  bg-yellow-200  py-10 w-full  ">
                 <h2 className="font-bold text-xl">Shopping Cart</h2>
                 <span  className="absolute top-2 right-0 cursor-pointer">
               

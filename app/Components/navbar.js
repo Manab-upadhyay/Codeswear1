@@ -70,7 +70,7 @@ export default function Navbar() {
                 </div>}
            {user.value&& <RiAccountCircleFill onMouseEnter={()=>settoggle(true)} onMouseLeave={()=>settoggle(false)}/>}
 
-               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 -my-3 rounded-lg">Login </button></Link> }
+               {!user.value&&<Link href={"/singin"}><button className="bg-yellow-300 text-white px-1 py-1 -my-5 rounded-lg">Login </button></Link> }
                  
             <div onClick={handdlecartclick} className="cart mx-4 cursor-pointer">
            

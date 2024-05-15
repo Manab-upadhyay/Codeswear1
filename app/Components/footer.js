@@ -34,7 +34,7 @@ export default function Footer(){
           </li>
         </nav>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+      <div className="lg:w-1/4 w-full px-4">
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
         <nav className="list-none mb-10">
           <li>
@@ -51,7 +51,7 @@ export default function Footer(){
           </li>
         </nav>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+      <div className="lg:w-1/4  w-full px-4">
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
         <nav className="list-none mb-10">
           <li>
@@ -68,7 +68,7 @@ export default function Footer(){
           </li>
         </nav>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+      <div className="lg:w-1/4  w-full px-4">
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
         <nav className="list-none mb-10">
           <li>
