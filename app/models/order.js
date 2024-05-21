@@ -2,7 +2,8 @@
 
 
 
-const mongoose= require('mongoose')
+
+import mongoose from "mongoose"
 
 const OderSchema= new mongoose.Schema({
     email : {type:String,require:true},
