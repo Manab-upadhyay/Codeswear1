@@ -1,7 +1,7 @@
 import Order from "../models/order"; // Assuming "Order" is the correct import for your model
-import { NextRequest } from "next/server";
+import { NextRequest,NextResponse } from "next/server";
 import connectDB from "../db/page";
-import Oder from "../oder/[id]/page";
+
 
 
 export async function POST(req: NextRequest) {
@@ -30,3 +30,18 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Failed to update order status." });
   }
 }
+export async function GET (){
+  try {
+      await connectDB();
+  
+  let oders= await Order.find();
+  console.log("oders>>", oders)
+  return NextResponse.json(oders)
+  } catch (error) {
+      console.log(error)
+  }
+  
+  
+  
+  
+  }

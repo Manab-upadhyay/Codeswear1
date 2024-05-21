@@ -11,7 +11,7 @@ useEffect(() => {
 
       try {
        
-        const response = await fetch('/oderapi');
+        const response = await fetch('/updatestatus');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
