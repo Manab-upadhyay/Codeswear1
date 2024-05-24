@@ -164,7 +164,7 @@ const result= {cart, total , address, name, pin, contact,email, orderId};
       <h1 className="sm:text-3xl md:text-2xl font-medium title-font mb-4 text-gray-900 text-sm  ">Check Out</h1>
       
     </div>
-    <div className="lg:w-1/2 md:w-2/3 mx-auto">
+    <div className="lg:w-1/2 w-2/3 mx-auto">
       <div className='text-black font-bold'> 1 .Delivary Details .</div>
       <div className="flex md:flex-row flex-col flex-wrap -m-2">
         <div className="p-2 w-1/2">
