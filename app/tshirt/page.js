@@ -37,7 +37,7 @@ async function getdata() {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {Object.entries(products).map(([key, product]) => (
-              <div key={product._id} className="lg:w-1/4 md:w-1/2 p-4 cursor-pointer shadow-lg">
+              <div key={product._id} className="lg:w-1/4 w-1/2 p-4 cursor-pointer shadow-lg">
                 <Link href={`/product/${product.slug}`} className="block rounded overflow-hidden">
                 <img alt="ecommerce" className="object-center cursor-pointer shadow-lg h-full block w-80" src={product.img} />
                 </Link>
