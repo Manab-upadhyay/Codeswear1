@@ -224,7 +224,7 @@ console.log("colorset")
         className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:border-yellow-400 text-base pl-3 pr-10"
         onClick={handleChangeSize}
       >
-        {apiData?.[slug]?.size.includes('38') && <button value="38">38</button>}
+        {apiData?.[slug]?.size.includes('38') && <option value="38">38</option>}
         {apiData?.[slug]?.size.includes('40') && <option value="40">40</option>}
         {apiData?.[slug]?.size.includes('42') && <option value="42">42</option>}
         {apiData?.[slug]?.size.includes('36') && <option value="36">36</option>}
