@@ -37,7 +37,7 @@ async function Hoddies() {
             {Object.entries(products).map(([key, product]) => (
               <div key={product._id} className="lg:w-1/4 w-1/2 p-4 cursor-pointer shadow-lg">
                 <Link href={`/product/${product.slug}`} className="block rounded overflow-hidden">
-                <img alt="ecommerce" className="object-center cursor-pointer shadow-lg h-full block" src={product.img} />
+                <img alt="ecommerce" className="object-center cursor-pointer shadow-lg h-full block w-80" src={product.img} />
                 </Link>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{product.category}</h3>
