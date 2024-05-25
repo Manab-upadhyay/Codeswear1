@@ -52,7 +52,7 @@ export default function Navbar() {
                 </li>
             </ul>
          
-            <div className="cart mx-5 my-10 md:mx-0 md:my-2 justify-end cursor-pointer  flex absolute right-0 ">
+            <div className="cart mx-5 my-10 md:mx-0 my-2 justify-end cursor-pointer  flex absolute right-0 ">
                { toggle&&<div className="absolute right-5 bg-white my-3 mx-10 px-4 py-4 text-black font-serif "  onMouseEnter={()=>settoggle(true)} onMouseLeave={()=>settoggle(false)}>
                     <a><ul>
                        <Link href={"/myaccount"}><li className="hover:text-yellow-600 w-10">
